@@ -1,6 +1,7 @@
 package actions
 
 import (
+	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/packr"
 )
@@ -18,6 +19,10 @@ func init() {
 		AssetsBox:    assetsBox,
 
 		// Add template helpers here:
-		Helpers: render.Helpers{},
+		Helpers: render.Helpers{
+			"isCurrentPathName": func(current buffalo.RouteInfo, name string) bool {
+                    return current.PathName == name
+            },
+		},
 	})
 }
