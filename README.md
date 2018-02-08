@@ -32,3 +32,7 @@ We recommend you heading over to [http://gobuffalo.io](http://gobuffalo.io) and 
 Good luck!
 
 [Powered by Buffalo](http://gobuffalo.io)
+
+## Postgres
+$ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 15432:5432 -d postgres
+$ createdb -U postgres -h 127.0.0.1 -p 15432 business-card_dev //(test|prod)
