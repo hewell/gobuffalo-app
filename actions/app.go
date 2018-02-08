@@ -27,7 +27,7 @@ func App() *buffalo.App {
 	if app == nil {
 		app = buffalo.New(buffalo.Options{
 			Env:         ENV,
-			SessionName: "_myapp_session",
+			SessionName: "_business-card_session",
 		})
 		// Automatically redirect to SSL
 		app.Use(ssl.ForceSSL(secure.Options{
@@ -56,6 +56,11 @@ func App() *buffalo.App {
 		app.Use(T.Middleware())
 
 		app.GET("/", HomeHandler)
+    app.GET("/resume", ResumeHandler)
+    app.GET("/contact", ContactHandler)
+		
+    app.GET("/routes", RoutesHandler)
+
 
 		app.ServeFiles("/assets", assetsBox)
 	}

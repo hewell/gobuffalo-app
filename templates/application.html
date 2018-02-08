@@ -1,20 +1,25 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Buffalo - Myapp</title>
-    <%= stylesheetTag("application.css") %>
-    <meta name="csrf-param" content="authenticity_token" />
-    <meta name="csrf-token" content="<%= authenticity_token %>" />
-    <link rel="icon" href="<%= assetPath("images/favicon.ico") %>">
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <title>Paweł Słomka</title>
+        <link rel="stylesheet" href="/assets/application.css" type="text/css" media="all" />
+        ...
+    </head>
+    <body>
+        <div>
+            <header>
+                <div>
+                    <h1 class="title">Paweł Słomka</h1>
+                    <h2 class="subtitle">
+                    My very personal business card.
+                    </h2>
+                </div>
+            </header>
 
-    <div class="container">
-      <%= partial("flash.html") %>
-      <%= yield %>
-    </div>
+            <%= partial("flash.html") %>
+            <%= yield %>
+        </div>
 
-    <%= javascriptTag("application.js") %>
-  </body>
+        <script src="/assets/application.js" type="text/javascript" charset="utf-8"></script>
+    </body>
 </html>
